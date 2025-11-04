@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/About.css";
+import agentImage from "../images/agent.jpg";
 
 function About() {
   return (
@@ -29,10 +30,9 @@ function About() {
         {/* Right side - Image */}
         <div className="about-image">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/4712/4712105.png"
+            src={agentImage}
             alt="AI Agents"
           />
-          <div className="about-logo">PrimEx</div>
         </div>
       </div>
     </section>

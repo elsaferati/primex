@@ -23,8 +23,8 @@ function App() {
         {/* Add top padding to offset fixed header */}
         <Hero />
         <About />
-        <Services />
         <ProductData />
+        <Services />        
         <Partners />
         <CTASections />
         <Contact />

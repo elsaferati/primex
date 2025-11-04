@@ -39,8 +39,8 @@
 
 /* Right Side - Image */
 .about-image {
-  flex: 1 1 40%; /* takes 40% of container width */
-  min-width: 280px; /* prevents collapsing */
+  flex: 1 1 40%;
+  width: 20rem; 
   position: relative;
   display: flex;
   justify-content: center;
