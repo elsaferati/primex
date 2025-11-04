@@ -27,9 +27,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.6); /* darker overlay */
   z-index: -1;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7); /* subtle inner shadow */
 }
+
 
 .hero-content {
   z-index: 1;
