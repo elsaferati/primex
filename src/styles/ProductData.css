@@ -1,21 +1,13 @@
 /* Section */
 .product-data-section {
-  padding: 5rem 1rem;
+  padding: 5rem 6rem;
   background-color: #f9fafb;
-  text-align: center;
 }
 
 /* Container */
 .product-data-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Title */
-.product-data-title {
-  font-size: 2.25rem;
-  margin-bottom: 3rem;
-  color: #1f2937;
 }
 
 /* Grid Layout */
@@ -32,39 +24,76 @@
   }
 }
 
-/* Features List */
+/* Text Column */
 .features-list {
   text-align: left;
 }
 
 .features-title {
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
   color: #111827;
+  margin-bottom: 0.75rem;
 }
 
-.features-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.highlight-text {
+  color: #2563eb;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
-.feature-item {
-  display: flex;
-  align-items: start;
-  margin-bottom: 1rem;
+.description-text {
   font-size: 1.125rem;
   color: #4b5563;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
 }
 
-.feature-icon {
-  color: #3b82f6;
+.feature-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+}
+
+.feature-points li {
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.feature-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-size: 1.25rem;
+}
+
+/* Step Highlight */
+.step-highlight {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.step-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2563eb;
   margin-right: 0.75rem;
-  margin-top: 0.2rem;
 }
 
-/* Product Image */
+.step-text {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+}
+
+/* Image Column */
 .product-image-container {
   display: flex;
   justify-content: center;
@@ -72,6 +101,9 @@
 
 .product-image {
   width: 100%;
+  max-width: 550px;
   border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+
+

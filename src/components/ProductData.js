@@ -1,39 +1,45 @@
 import React from "react";
-import "../styles/ProductData.css"; // Import the CSS file
+import "../styles/ProductData.css";
+import productImage from "../images/tables.png";
 
 function ProductData() {
-  const features = [
-    "Automated data classification",
-    "Real-time synchronization",
-    "Advanced analytics and reporting",
-    "Seamless integration with existing systems",
-    "Scalable cloud infrastructure",
-  ];
-
   return (
     <section className="product-data-section">
       <div className="product-data-container">
-        <h2 className="product-data-title">Product Data Management</h2>
-
         <div className="product-data-grid">
-          {/* Features List */}
+          {/* Left: Text */}
           <div className="features-list">
-            <h3 className="features-title">Smart Attribute Automation</h3>
-            <ul>
-              {features.map((feature, index) => (
-                <li key={index} className="feature-item">
-                  <span className="feature-icon">✔️</span>
-                  <span className="feature-text">{feature}</span>
-                </li>
-              ))}
+            <h2 className="features-title">Smart Attribute Automation</h2>
+            <h3 className="highlight-text">No more manual data entry.</h3>
+
+            <p className="description-text">
+              With <strong>PrimEx</strong>, product attributes are filled in{" "}
+              <strong>automatically</strong> from your general product data
+              (Excel, ERP, or PIM). Instead of manually entering details, our
+              system detects the value from your general information and pushes
+              it to all required attributes.
+            </p>
+
+            <ul className="feature-points">
+              <li>Saves time by eliminating repetitive manual entry.</li>
+              <li>Ensures accuracy and consistency across all sales channels.</li>
+              <li>Automatically adapts to each portal’s requirements.</li>
+              <li>Faster product listing and compliance.</li>
             </ul>
+
+            <div className="step-highlight">
+              <span className="step-number">3</span>
+              <span className="step-text">
+                Complete in 3 Easy Steps to Finish
+              </span>
+            </div>
           </div>
 
-          {/* Product Image */}
+          {/* Right: Image */}
           <div className="product-image-container">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
-              alt="Product Management"
+              src={productImage}
+              alt="Smart Attribute Automation"
               className="product-image"
             />
           </div>
@@ -44,4 +50,7 @@ function ProductData() {
 }
 
 export default ProductData;
+
+
+
 
