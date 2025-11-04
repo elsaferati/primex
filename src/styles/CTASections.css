@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #1e40af;
+  --accent-color: #2563eb;
+  --text-dark: #111827;
+  --text-light: #4b5563;
+  --secondary-color: #f1f5f9;
+}
+
+/* ---- General Layout ---- */
+.cta-wrapper {
+  width: 100%;
+}
+
+.cta-section {
+  padding: 100px 5%;
+}
+
+.cta-section.light {
+  background: #ffffff;
+}
+
+.cta-section.gray {
+  background: #f9fafb;
+}
+
+/* ---- Container ---- */
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- CTA Box ---- */
+.cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  border-radius: 24px;
+  padding: 60px;
+  gap: 50px;
+  transition: 0.3s ease;
+}
+
+.cta-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Reverse layout for second section */
+.cta-box.reverse {
+  flex-direction: row-reverse;
+  background: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* ---- Content ---- */
+.cta-content {
+  flex: 1;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ---- Button ---- */
+.cta-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.03);
+}
+
+/* ---- Image ---- */
+.cta-image {
+  flex-shrink: 0;
+}
+
+.cta-image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .cta-box.reverse {
+    flex-direction: column;
+  }
+
+  .cta-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+}

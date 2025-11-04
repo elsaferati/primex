@@ -1,0 +1,117 @@
+/* Section */
+.partners-section {
+  padding: 2rem 1rem;
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+/* Container */
+.partners-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Title */
+.partners-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Logos Container */
+.partners-logos {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+/* Hide scrollbar */
+.partners-logos::-webkit-scrollbar {
+  display: none;
+}
+.partners-logos {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Individual Partner Card */
+.partner-card {
+  width: 20rem;
+  height: 20rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Partner Image */
+.partner-image {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.partner-card:hover .partner-image {
+  transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.partners-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #f97316;
+  transform: scale(1.1);
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  color: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .partner-card {
+    min-width: 80px;
+    min-height: 80px;
+  }
+  .nav-button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+

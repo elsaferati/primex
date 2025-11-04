@@ -1,0 +1,156 @@
+
+:root {
+  --primary-color: #040d28; /* dark blue */
+  --accent-color: #051b4b;
+  --text-light: #f3f4f6;
+  --text-dark: #111827;
+}
+
+/* ---- Section ---- */
+.contact-section {
+  background: var(--primary-color); /* dark blue */
+  color: var(--text-light);
+  padding: 100px 5%;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---- Title ---- */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* ---- Buttons ---- */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: var(--primary-color);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+/* ---- Visit Us ---- */
+.visit-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+}
+
+.visit-box h3 {
+  margin-bottom: 5px;
+}
+
+.visit-box p {
+  font-size: 1rem;
+}
+
+/* ---- Form ---- */
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.contact-form h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--accent-color);
+}
+
+/* ---- Map ---- */
+.contact-map {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* no background color: map tiles show normally */
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .visit-box {
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+
+

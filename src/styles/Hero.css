@@ -1,0 +1,89 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* keep content on the left */
+  text-align: left;
+  color: white;
+  overflow: hidden;
+  padding-left: 5%; /* 👈 move more to the left */
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+/* Smaller, lighter text for 'Prime Team' */
+.small-text {
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Bigger, bold text for 'Prime Solution!' */
+.big-text {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero-content button {
+  background-color: #2e6cf6;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero-content button:hover {
+  background-color: #1a4fd9;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .small-text {
+    font-size: 1.5rem;
+  }
+
+  .big-text {
+    font-size: 2.8rem;
+  }
+}
+
+
+
