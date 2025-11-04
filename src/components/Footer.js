@@ -86,12 +86,6 @@ function Footer() {
             <p>E-mail: info@primexeu.com</p>
             <p>Phone: +383 49 937 863</p>
 
-            <h4>Visit Us</h4>
-            <p>Zone: Zona Industriale Fushë Kosovë</p>
-            <p>Street: 7 Shtatori</p>
-            <p>Nr: 12</p>
-            <p>City: Fushë Kosovë</p>
-            <p>Country: Republic of Kosovo</p>
           </div>
         </div>
 
