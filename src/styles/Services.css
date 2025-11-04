@@ -96,10 +96,10 @@
 .service-content {
   position: relative;
   z-index: 2;
-  max-width: 850px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .service-title {
