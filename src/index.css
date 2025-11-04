@@ -1,10 +1,10 @@
 /* ---- Global Variables ---- */
 :root {
-  --primary-color: #1e40af;       /* deep blue */
+  --primary-color: #1e40af; /* deep blue */
   --primary-dark: #1e3a8a;
-  --secondary-color: #f3f4f6;     /* light gray */
-  --text-dark: #111827;           /* dark gray */
-  --text-light: #4b5563;          /* medium gray */
+  --secondary-color: #f3f4f6; /* light gray */
+  --text-dark: #111827; /* dark gray */
+  --text-light: #4b5563; /* medium gray */
   --accent-color: #2563eb;
   --btn-radius: 12px;
 }
@@ -26,10 +26,12 @@ img {
   display: block;
 }
 
+/* Shared container for horizontal alignment */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  /* max-width: 1200px; adjust to your preference */
+  margin: 0 auto; /* center container */
+  /* padding: 0 20px; horizontal padding on small screens */
+  box-sizing: border-box;
 }
 
 /* ---- Buttons ---- */
@@ -90,11 +92,3 @@ footer h3,
 footer h4 {
   color: #fff;
 }
-
-
-
-
-
-
-
-

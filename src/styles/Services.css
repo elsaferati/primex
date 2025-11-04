@@ -14,13 +14,13 @@
   color: #000;
   background-color: #fff;
   padding: 6rem 2rem 3rem;
-  font-family: 'Syne', sans-serif; /* Use Syne font */
+  font-family: "Syne", sans-serif; /* Use Syne font */
 }
 
 .services-header h1 {
-  font-size: 3rem;           /* bigger for more impact */
-  font-weight: 900;           /* extra bold */
-  color: #171616;             /* black */
+  font-size: 3rem; /* bigger for more impact */
+  font-weight: 900; /* extra bold */
+  color: #171616; /* black */
   letter-spacing: 1px;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -34,8 +34,6 @@
   margin: 0 auto;
   line-height: 1.6;
 }
-
-
 
 /* Each Section */
 .service-section {
@@ -100,6 +98,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding: 80px;
 }
 
 .service-title {
@@ -115,8 +114,6 @@
   color: #e5e7eb;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
-
-
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -135,7 +132,3 @@
     align-items: center;
   }
 }
-
-
-
-

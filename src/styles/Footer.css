@@ -5,33 +5,54 @@
   --bg-darker: #0f172a;
   --text-light: #9ca3af;
   --text-white: #ffffff;
+  --footer-padding: 60px; /* uniform padding */
+  --footer-gap: 40px; /* uniform gap between columns */
 }
 
 /* ---- Footer ---- */
 .footer {
   background: var(--bg-dark);
   color: var(--text-white);
-  padding: 80px 5% 40px;
+  padding: var(--footer-padding) 5%;
   font-family: "Inter", sans-serif;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 /* ---- Grid ---- */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-bottom: 50px;
+  gap: var(--footer-gap);
 }
 
+/* Make every column have same internal spacing */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space between elements inside column */
+}
+
+.footer-col img {
+  height: 60px;
+  width: fit-content;
+}
+
+.footer-col-pages {
+  padding-left: 50px;
+}
+/* Headings */
 .footer-col h3,
 .footer-col h4 {
   font-weight: 700;
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-logo {
@@ -39,15 +60,18 @@
   color: var(--text-white);
 }
 
+/* Paragraphs */
 .footer-col p {
   color: var(--text-light);
   line-height: 1.6;
+  margin: 0;
 }
 
 /* ---- Links ---- */
 .footer-col ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-col ul li {
@@ -69,30 +93,27 @@
   color: var(--text-light);
   font-size: 0.95rem;
 }
-
-/* ---- Social Icons ---- */
 .footer-socials {
   display: flex;
-  gap: 12px;
-  margin-bottom: 15px;
+  gap: 16px; /* space between icons */
 }
-
 .footer-socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-darker);
-  color: var(--text-white);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  transition: 0.3s ease;
+  display: inline-block;
+  width: 24px; /* smaller button size */
+  height: 24px;
+  transition: transform 0.2s ease;
 }
 
 .footer-socials a:hover {
-  background: var(--primary-color);
-  transform: translateY(-3px);
+  transform: scale(1.1);
+}
+
+.footer-socials img.social-icon {
+  width: 100%; /* make the img fit the a element */
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* turns PNGs white if they are dark */
 }
 
 /* ---- Bottom ---- */
@@ -115,6 +136,7 @@
 @media (max-width: 600px) {
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
     text-align: center;
   }
 

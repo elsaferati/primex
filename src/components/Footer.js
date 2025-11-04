@@ -1,15 +1,22 @@
 import React from "react";
 import "../styles/Footer.css";
+import PrimexLogo from "../images/PRIMEX LOGO png.png";
+import FacebookIcon from "../images/facebook.png";
+import InstagramIcon from "../images/instagram.png";
 
 function Footer() {
   return (
-    <footer className="footer" data-name="footer" data-file="components/Footer.js">
+    <footer
+      className="footer"
+      data-name="footer"
+      data-file="components/Footer.js"
+    >
       <div className="footer-container">
         {/* ---- Top Section ---- */}
         <div className="footer-grid">
           {/* Company Info */}
           <div className="footer-col">
-            <h3 className="footer-logo">PrimEx</h3>
+            <img src={PrimexLogo} alt="PrimEx Logo" />
             <p>
               Prime Team, Prime Solution. Delivering excellence in IT and
               business solutions since 1985.
@@ -17,14 +24,24 @@ function Footer() {
           </div>
 
           {/* Pages Links */}
-          <div className="footer-col">
+          <div className="footer-col footer-col-pages">
             <h4>Pages</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#partners">Our Partners</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#about">About Us</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#partners">Our Partners</a>
+              </li>
+              <li>
+                <a href="#contact">Contact Us</a>
+              </li>
             </ul>
           </div>
 
@@ -32,9 +49,8 @@ function Footer() {
           <div className="footer-col">
             <h4>Working Hours</h4>
             <ul className="footer-hours">
-              <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
-              <li>Saturday: 10:00 AM - 4:00 PM</li>
-              <li>Sunday: Closed</li>
+              <li>Monday - Friday: </li>
+              <li>8:00 AM - 16:30 PM</li>
             </ul>
           </div>
 
@@ -42,12 +58,40 @@ function Footer() {
           <div className="footer-col">
             <h4>Follow Us On</h4>
             <div className="footer-socials">
-              <a href="#"><span>📘</span></a>
-              <a href="#"><span>🐦</span></a>
-              <a href="#"><span>💼</span></a>
+              <a
+                href="https://www.facebook.com/primexeu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={FacebookIcon}
+                  alt="Facebook"
+                  className="social-icon"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/primex.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={InstagramIcon}
+                  alt="Instagram"
+                  className="social-icon"
+                />
+              </a>
             </div>
-            <p>info@primex.com</p>
-            <p>+1 (234) 567-8900</p>
+
+            <h4>Contact Us</h4>
+            <p>E-mail: info@primexeu.com</p>
+            <p>Phone: +383 49 937 863</p>
+
+            <h4>Visit Us</h4>
+            <p>Zone: Zona Industriale Fushë Kosovë</p>
+            <p>Street: 7 Shtatori</p>
+            <p>Nr: 12</p>
+            <p>City: Fushë Kosovë</p>
+            <p>Country: Republic of Kosovo</p>
           </div>
         </div>
 
@@ -61,5 +105,3 @@ function Footer() {
 }
 
 export default Footer;
-
-

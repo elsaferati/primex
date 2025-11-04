@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
-import logo from "../images/PRIMEX LOGO png.png"; 
+import logo from "../images/PRIMEX LOGO png.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,10 +59,7 @@ function Header() {
         </nav>
 
         {/* Mobile menu toggle */}
-        <div
-          className="menu-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? "✖" : "☰"}
         </div>
       </div>
@@ -71,6 +68,3 @@ function Header() {
 }
 
 export default Header;
-
-
-

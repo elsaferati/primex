@@ -21,14 +21,20 @@ function Contact() {
           <h2 className="contact-title">Reach Out to Us</h2>
 
           <div className="contact-links">
-            <a href="mailto:info@primex.com" className="contact-button">
+            <a href="mailto:info@primex.eu" className="contact-button">
               <div className="icon-mail"></div>
-              <span>Mail Us</span>
+              <div className="contact-text">
+                <small>Mail Us</small>
+                <span>info@primex.eu</span>
+              </div>
             </a>
 
-            <a href="tel:+1234567890" className="contact-button">
+            <a href="tel:+38349937863" className="contact-button">
               <div className="icon-phone"></div>
-              <span>Make a Call</span>
+              <div className="contact-text">
+                <small>Make a Call</small>
+                <span>+383 49 937 863</span>
+              </div>
             </a>
           </div>
 

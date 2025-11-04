@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/CTASections.css";
-import applyImg from "../images/apply.png"; 
+import applyImg from "../images/apply.png";
 import teamImg from "../images/team-join-thumb-2-1.png";
+import teamWork from "../images/team-work-dark.png";
 
 function CTASections() {
   return (
@@ -26,11 +27,7 @@ function CTASections() {
 
       {/* ---- Divider ---- */}
       <div className="cta-divider">
-        <img
-          src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80"
-          alt="Graphic Designer"
-          className="divider-image"
-        />
+        <img src={teamWork} alt="Graphic Designer" className="divider-image" />
         <div className="divider-overlay"></div>
         <div className="divider-text">
           We don’t believe in chance.
@@ -56,19 +53,8 @@ function CTASections() {
           </div>
         </div>
       </section>
-
-      {/* ---- Second Divider ---- */}
-      <div className="cta-divider black">
-        <div className="divider-text narrow">
-          Success is no accident. It is hard work, perseverance, learning,
-          studying, sacrifice and most of all, love of what you are doing or
-          learning to do.
-        </div>
-      </div>
     </div>
   );
 }
 
 export default CTASections;
-
-
