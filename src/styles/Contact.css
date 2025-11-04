@@ -1,14 +1,14 @@
 
 :root {
   --primary-color: #040d28; /* dark blue */
-  --accent-color: #051b4b;
+  --accent-color: #0d1015;
   --text-light: #f3f4f6;
   --text-dark: #111827;
 }
 
 /* ---- Section ---- */
 .contact-section {
-  background: var(--primary-color); /* dark blue */
+  background-color:#0b1c4f ;
   color: var(--text-light);
   padding: 100px 5%;
 }
