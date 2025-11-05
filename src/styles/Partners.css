@@ -14,11 +14,19 @@
 
 /* Title */
 .partners-title {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 0.1rem;
   color: #1f2937;
   font-weight: 600;
 }
+.partners-subtitle {
+  font-size: 1rem;          /* slightly smaller than title */
+  color: #4b5563;           /* dark grey */
+  margin-top: -0.09rem;     
+  margin-bottom: 3.5rem;      /* space before the logos start */
+  font-weight: 570; 
+}
+
 
 /* Logos Container */
 .partners-logos {
@@ -37,6 +45,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
 /* Individual Partner Card */
 .partner-card {
   width: 32%;
