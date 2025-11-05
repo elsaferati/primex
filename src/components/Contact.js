@@ -16,12 +16,18 @@ function Contact() {
 
   return (
     <section id="contact">
-      <div id="contact" className="contact-section" data-name="contact">
+      <div className="contact-section" data-name="contact">
         <div className="contact-container">
           <h2 className="contact-title">Reach Out to Us</h2>
 
           <div className="contact-links">
-            <a href="mailto:info@primex.eu" className="contact-button">
+            {/* Mail Button */}
+            <a
+              className="contact-button"
+              href="mailto:info@primex.eu?subject=Inquiry%20from%20PrimEx%20Website&body=Hello%20PrimEx%20Team,%20I%20would%20like%20to%20inquire%20about..."
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="icon-mail"></div>
               <div className="contact-text">
                 <small>Mail Us</small>
@@ -29,7 +35,8 @@ function Contact() {
               </div>
             </a>
 
-            <a href="tel:+38349937863" className="contact-button">
+            {/* Call Button */}
+            <a className="contact-button" href="tel:+38349937863">
               <div className="icon-phone"></div>
               <div className="contact-text">
                 <small>Make a Call</small>
