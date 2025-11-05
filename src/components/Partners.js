@@ -19,8 +19,7 @@ function Partners() {
 
   const AUTO_SPEED = 0.6; // pixels per frame
 
-  // Auto-scroll function
-  const autoScrollLoop = useCallback(() => {
+ const autoScrollLoop = useCallback(() => {
     const c = containerRef.current;
     if (!c || pausedRef.current) return;
 
@@ -30,6 +29,9 @@ function Partners() {
     if (c.scrollLeft >= half) c.scrollLeft -= half;
     rafRef.current = requestAnimationFrame(autoScrollLoop);
   }, []);
+
+
+
 
   const pauseAutoScrollTemporarily = useCallback(
     (ms = 2000) => {
