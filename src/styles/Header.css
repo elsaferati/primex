@@ -5,8 +5,24 @@
   --transition: 0.3s ease;
 }
 
+/* ---- Global box-sizing ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
 /* ---- Header ---- */
 .header {
+  width: 100vw; /* full viewport width */
+  left: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,20 +40,28 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ---- Container ---- */
+/* Header container */
 .header-container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%; /* make sure it never exceeds viewport */
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* On mobile, reduce padding slightly */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 15px 10px;
+  }
+}
+
 /* ---- Logo ---- */
 .logo img {
   height: 50px;
+  max-width: 100%;
   width: auto;
 }
 
@@ -45,6 +69,7 @@
 .nav {
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
 }
 
 .nav button {
@@ -87,9 +112,10 @@
   color: inherit;
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .nav {
-    position: absolute;
+    position: fixed; /* changed from absolute to fixed */
     top: 70px;
     left: 0;
     right: 0;
@@ -99,6 +125,7 @@
     gap: 16px;
     padding: 20px 0;
     display: none;
+    overflow: hidden; /* prevent content overflow */
   }
 
   .nav.open {
@@ -112,5 +139,10 @@
   .header.scrolled .nav {
     background: #ffffff;
   }
-}
 
+  /* Reduce gap on mobile to prevent overflow */
+  .nav button {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
