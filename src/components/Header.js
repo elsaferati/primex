@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 import logo from "../images/PRIMEX LOGO png.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation(); // get current route
+  const navigate = useNavigate();
 
   // Track scroll and active section (only on home page)
   useEffect(() => {
-    if (location.pathname !== "/") return;
+    if (location.pathname !== "/") {
+      // Reset active section when not on homepage
+      setActiveSection("");
+      return;
+    }
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -31,14 +36,27 @@ function Header() {
 
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
-      // navigate to home first if not on home
-      window.location.href = `/#${id}`;
+      // Navigate to home first, then scroll smoothly
+      navigate("/", { state: { scrollTo: id } });
+      setIsMenuOpen(false);
       return;
     }
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
+
+  // Handle scroll on navigation from other pages
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        // Clear state after scrolling
+        window.history.replaceState({}, document.title);
+      }
+    }
+  }, [location]);
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
@@ -48,11 +66,13 @@ function Header() {
         </div>
 
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
-          {[{ id: "home", label: "Home" },
+          {[
+            { id: "home", label: "Home" },
             { id: "about", label: "About Us" },
             { id: "services", label: "Services" },
             { id: "partners", label: "Our Partners" },
-            { id: "contact", label: "Contact Us" }].map((item) => (
+            { id: "contact", label: "Contact Us" }
+          ].map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
@@ -61,9 +81,6 @@ function Header() {
               {item.label}
             </button>
           ))}
-          <Link to="/terms">
-            <button>Terms</button>
-          </Link>
         </nav>
 
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -75,4 +92,5 @@ function Header() {
 }
 
 export default Header;
+
 

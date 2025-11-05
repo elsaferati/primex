@@ -4,11 +4,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import Terms from "./components/Terms";
+import ScrollToTop from "./helpers/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -21,6 +23,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
