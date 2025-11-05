@@ -51,10 +51,17 @@ body {
   align-items: center;
 }
 
-/* On mobile, reduce padding slightly */
+/* Mobile: reduce padding slightly */
 @media (max-width: 480px) {
   .header-container {
-    padding: 15px 10px;
+    padding: 15px 20px;
+  }
+}
+
+/* Tablet/Desktop: increase padding */
+@media (min-width: 769px) {
+  .header-container {
+    padding: 20px 100px; /* more horizontal padding for desktop */
   }
 }
 
