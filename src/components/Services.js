@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/Services.css";
 
-
 import working from "../videos/working.mp4";
 import working2 from "../videos/working2.mp4";
 import working3 from "../videos/working3.mp4";
@@ -46,7 +45,9 @@ function Services() {
       {/* Header section */}
       <div className="services-header">
         <h1>What we do</h1>
-        <p>We take a thoughtful and intentional approach to everything we do.</p>
+        <p>
+          We take a thoughtful and intentional approach to everything we do.
+        </p>
       </div>
 
       {/* Services sections */}

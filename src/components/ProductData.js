@@ -6,6 +6,9 @@ function ProductData() {
   return (
     <section className="product-data-section">
       <div className="product-data-container">
+        {/* Centered Section Title */}
+        <h1 className="section-title">Product Data Management</h1>
+
         <div className="product-data-grid">
           {/* Left: Text */}
           <div className="features-list">
@@ -22,7 +25,9 @@ function ProductData() {
 
             <ul className="feature-points">
               <li>Saves time by eliminating repetitive manual entry.</li>
-              <li>Ensures accuracy and consistency across all sales channels.</li>
+              <li>
+                Ensures accuracy and consistency across all sales channels.
+              </li>
               <li>Automatically adapts to each portal’s requirements.</li>
               <li>Faster product listing and compliance.</li>
             </ul>
@@ -50,7 +55,3 @@ function ProductData() {
 }
 
 export default ProductData;
-
-
-
-

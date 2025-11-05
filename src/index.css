@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
 /* ---- Global Variables ---- */
 :root {
   --primary-color: #1e40af; /* deep blue */
@@ -9,8 +11,9 @@
   --btn-radius: 12px;
 }
 
-/* ---- Global Reset ---- */
+/* Global  */
 * {
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 

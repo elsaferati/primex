@@ -9,6 +9,20 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+/* Centered Section Title */
+.section-title {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4rem;
+  text-decoration: none;
+  border: none;
+}
+.section-title::after {
+  content: none !important;
+  border: none !important;
+}
 
 /* Grid Layout */
 .product-data-grid {
