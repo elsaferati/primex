@@ -138,6 +138,7 @@
   line-height: 1.7;
   color: #e5e7eb;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  text-align: start;
 }
 
 /* Responsive */
