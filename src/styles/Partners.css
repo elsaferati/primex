@@ -1,40 +1,48 @@
-/* Section */
+/* ---- Partners Section ---- */
 .partners-section {
   padding: 2rem 1rem;
   background-color: #f9fafb;
   text-align: center;
+  overflow-x: hidden; /* prevent page overflow */
 }
 
-/* Container */
+/* ---- Container ---- */
 .partners-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 👈 centers horizontally */
+  align-items: center;
   justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Title */
+/* ---- Titles ---- */
 .partners-title {
   font-size: 2.8rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 0.1rem;
 }
+
 .partners-subtitle {
-  font-size: 1rem; /* slightly smaller than title */
-  color: #2b3139; /* dark grey */
+  font-size: 1rem;
+  color: #2b3139;
   margin-top: -0.09rem;
-  margin-bottom: 3.5rem; /* space before the logos start */
+  margin-bottom: 3.5rem;
   font-weight: 550;
 }
 
-/* Logos Container */
+/* ---- Logos Container ---- */
 .partners-logos {
   display: flex;
+  flex-wrap: nowrap; /* keep in one row */
+  justify-content: center;
   gap: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 1rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Hide scrollbar */
@@ -46,38 +54,40 @@
   scrollbar-width: none;
 }
 
-/* Individual Partner Card */
+/* ---- Partner Card (Desktop Default) ---- */
 .partner-card {
-  width: 32%;
+  flex: 0 0 30%; /* around 3 cards per row */
+  max-width: 350px; /* don’t let them stretch too wide */
   height: 20rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
-  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.15); /* stronger shadow */
+  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   flex-shrink: 0;
+  margin: 0 auto;
 }
 
 .partner-card:hover {
   transform: scale(1.05);
 }
 
-/* Partner Image */
+/* ---- Partner Image ---- */
 .partner-image {
-  width: 80%; /* make image bigger inside the card */
+  width: 80%;
   height: 80%;
   object-fit: contain;
   transition: transform 0.3s;
 }
 
 .partner-card:hover .partner-image {
-  transform: scale(1.15); /* zoom more on hover */
+  transform: scale(1.15);
 }
 
-/* Navigation Buttons */
+/* ---- Navigation Buttons ---- */
 .partners-nav {
   display: flex;
   justify-content: center;
@@ -109,51 +119,34 @@
   color: #000000;
 }
 
-/* Responsive */
+/* ---- Tablets (≤768px) ---- */
 @media (max-width: 768px) {
-  .partner-card {
-    min-width: 80px;
-    min-height: 80px;
-  }
-  .nav-button {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-/* ---- Partners Mobile Adjustments ---- */
-@media (max-width: 768px) {
-  /* Reduce section padding */
   .partners-section {
     padding: 1.5rem 0.5rem;
   }
 
-  /* Container adjustments */
   .partners-container {
     max-width: 100%;
     padding: 0 0.5rem;
   }
 
-  /* Titles smaller */
   .partners-title {
     font-size: 2rem;
   }
+
   .partners-subtitle {
     font-size: 0.9rem;
     margin-bottom: 2rem;
   }
 
-  /* Logos container: make it easier to swipe */
   .partners-logos {
     gap: 0.5rem;
     padding-bottom: 0.5rem;
   }
 
-  /* Partner cards smaller and more flexible */
   .partner-card {
-    width: 40%;
+    flex: 0 0 160px; /* fixed width for better scroll */
     height: 12rem;
-    min-width: 120px;
     border-radius: 0.5rem;
   }
 
@@ -162,7 +155,6 @@
     height: 90%;
   }
 
-  /* Navigation buttons smaller */
   .partners-nav {
     gap: 0.5rem;
     margin-top: 1rem;
@@ -178,10 +170,11 @@
   }
 }
 
-/* Extra small screens */
+/* ---- Extra Small Screens (≤480px) ---- */
 @media (max-width: 480px) {
   .partner-card {
-    width: 60%;
+    flex: 0 0 70%;
+    max-width: 280px;
     height: 10rem;
   }
 
