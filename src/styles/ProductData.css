@@ -1,6 +1,6 @@
-/* Section */
+/* ---- Product Data Section ---- */
 .product-data-section {
-  padding: 5rem 6rem;
+  padding: 3rem 1rem; /* mobile-friendly padding */
   background-color: #f9fafb;
 }
 
@@ -8,75 +8,71 @@
 .product-data-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem; /* prevent horizontal overflow */
 }
-/* Centered Section Title */
+
+/* Section Title */
 .section-title {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2rem; /* slightly smaller for mobile */
   font-weight: 700;
   color: #111;
   margin-bottom: 2rem;
-  text-decoration: none;
-  border: none;
 }
+
+/* Remove default line under title */
 .section-title::after {
-  content: none !important;
-  border: none !important;
+  content: none;
+  border: none;
 }
 
 /* Grid Layout */
 .product-data-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .product-data-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  gap: 2rem; /* smaller gap for mobile */
+  align-items: start;
 }
 
 /* Text Column */
 .features-list {
   text-align: left;
-  padding: 0 10px;
+  padding: 0 0.5rem;
 }
 
 .features-title {
-  font-size: 2.25rem;
+  font-size: 1.75rem; /* smaller for mobile */
   font-weight: 700;
   color: #111827;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .highlight-text {
   color: #2563eb;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .description-text {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #1d2127;
-  line-height: 1.75rem;
-  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Feature points */
 .feature-points {
-  list-style: none;
+  list-style: none; /* remove default bullets */
   padding: 0;
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
 }
 
 .feature-points li {
-  font-size: 1.125rem;
-  color: #111827;
-  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1rem; /* space for custom dot */
 }
 
 .feature-points li::before {
@@ -84,7 +80,7 @@
   position: absolute;
   left: 0;
   color: #2563eb;
-  font-size: 1.25rem;
+  font-size: 1rem; /* custom dot */
 }
 
 /* Step Highlight */
@@ -95,27 +91,85 @@
 }
 
 .step-number {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2563eb;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 .step-text {
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   color: #111827;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 /* Image Column */
 .product-image-container {
   display: flex;
   justify-content: center;
+  margin-top: 2rem; /* spacing between text and image on mobile */
 }
 
 .product-image {
   width: 100%;
-  max-width: 550px;
+  max-width: 100%;
   border-radius: 1rem;
+}
+
+/* ---- Tablet / Desktop ---- */
+@media (min-width: 768px) {
+  .product-data-section {
+    padding: 5rem 3rem;
+  }
+
+  .product-data-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .features-list {
+    padding: 0 1rem;
+  }
+
+  .features-title {
+    font-size: 2.25rem;
+  }
+
+  .highlight-text {
+    font-size: 1.5rem;
+  }
+
+  .description-text,
+  .feature-points li {
+    font-size: 1.125rem;
+  }
+
+  .feature-points li {
+    padding-left: 1.5rem; /* restore space for desktop */
+  }
+
+  .feature-points li::before {
+    font-size: 1.25rem;
+  }
+
+  .step-number {
+    font-size: 3rem;
+  }
+
+  .step-text {
+    font-size: 1.125rem;
+  }
+
+  .product-image {
+    max-width: 550px;
+  }
+}
+
+/* ---- Large Desktop ---- */
+@media (min-width: 1200px) {
+  .product-data-section {
+    padding: 6rem 6rem;
+  }
 }
