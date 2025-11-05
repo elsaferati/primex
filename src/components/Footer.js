@@ -85,7 +85,6 @@ function Footer() {
             <h4>Contact Us</h4>
             <p>E-mail: info@primexeu.com</p>
             <p>Phone: +383 49 937 863</p>
-
           </div>
         </div>
 
