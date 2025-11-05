@@ -23,7 +23,7 @@ function Services() {
     {
       title: "Sales and Bookkeeping",
       description:
-        "PrimEx offers comprehensive sales services, including global wholesale and retail sales management, production planning, and logistics organization. We also provide advanced e-commerce solutions (B2B and B2C), ensuring seamless transactions and exceptional customer care. For bookkeeping, PrimEx delivers efficient and accurate financial management services, including transaction recording, financial reporting, and compliance with accounting standards. Our expertise ensures that your financial operations run smoothly, allowing you to focus on growth and profitability.",
+        "PrimEx provides full sales services, including global wholesale and retail management, production planning, and logistics. We offer advanced B2B and B2C e-commerce solutions for seamless transactions and excellent customer care. In bookkeeping, PrimEx ensures efficient financial management, including transaction recording, reporting, and compliance, allowing your operations to run smoothly and focus on growth.",
       video: working3,
     },
     {
