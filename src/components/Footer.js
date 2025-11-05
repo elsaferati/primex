@@ -3,6 +3,7 @@ import "../styles/Footer.css";
 import PrimexLogo from "../images/PRIMEX LOGO png.png";
 import FacebookIcon from "../images/facebook.png";
 import InstagramIcon from "../images/instagram.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -42,6 +43,7 @@ function Footer() {
               <li>
                 <a href="#contact">Contact Us</a>
               </li>
+              <li><Link to="/terms">Terms and Conditions</Link></li>
             </ul>
           </div>
 
@@ -98,3 +100,5 @@ function Footer() {
 }
 
 export default Footer;
+
+
