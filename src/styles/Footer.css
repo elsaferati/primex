@@ -30,6 +30,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--footer-gap);
+  margin-left: 30px;
 }
 
 /* Make every column have same internal spacing */
