@@ -119,3 +119,76 @@
     height: 2rem;
   }
 }
+
+/* ---- Partners Mobile Adjustments ---- */
+@media (max-width: 768px) {
+  /* Reduce section padding */
+  .partners-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  /* Container adjustments */
+  .partners-container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  /* Titles smaller */
+  .partners-title {
+    font-size: 2rem;
+  }
+  .partners-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Logos container: make it easier to swipe */
+  .partners-logos {
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Partner cards smaller and more flexible */
+  .partner-card {
+    width: 40%;
+    height: 12rem;
+    min-width: 120px;
+    border-radius: 0.5rem;
+  }
+
+  .partner-image {
+    width: 90%;
+    height: 90%;
+  }
+
+  /* Navigation buttons smaller */
+  .partners-nav {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .nav-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .partner-card {
+    width: 60%;
+    height: 10rem;
+  }
+
+  .partners-title {
+    font-size: 1.75rem;
+  }
+
+  .partners-subtitle {
+    font-size: 0.85rem;
+  }
+}
