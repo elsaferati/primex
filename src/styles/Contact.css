@@ -87,9 +87,12 @@
 
 /* Address */
 .contact-address {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   color: white;
   margin-bottom: 80px;
+  align-items: center;
 }
 
 .contact-address p {
