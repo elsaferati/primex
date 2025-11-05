@@ -19,17 +19,18 @@ function Hero() {
           <span className="small-text">Prime Team,</span> <br />
           <span className="big-text">Prime Solution!</span>
         </h1>
-        <button>Learn More</button>
+        <button
+          onClick={() =>
+            document
+              .getElementById("about")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Learn More
+        </button>
       </div>
     </section>
   );
 }
 
 export default Hero;
-
-
-
-
-
-
-
