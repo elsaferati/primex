@@ -5,8 +5,8 @@
   --bg-darker: #0f172a;
   --text-light: #9ca3af;
   --text-white: #ffffff;
-  --footer-padding: 60px; /* uniform padding */
-  --footer-gap: 40px; /* uniform gap between columns */
+  --footer-padding: 60px;
+  --footer-gap: 40px;
 }
 
 /* ---- Footer ---- */
@@ -33,11 +33,10 @@
   margin-left: 30px;
 }
 
-/* Make every column have same internal spacing */
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* space between elements inside column */
+  gap: 12px;
 }
 
 .footer-col img {
@@ -48,6 +47,7 @@
 .footer-col-pages {
   padding-left: 50px;
 }
+
 /* Headings */
 .footer-col h3,
 .footer-col h4 {
@@ -94,13 +94,15 @@
   color: var(--text-light);
   font-size: 0.95rem;
 }
+
 .footer-socials {
   display: flex;
-  gap: 16px; /* space between icons */
+  gap: 16px;
 }
+
 .footer-socials a {
   display: inline-block;
-  width: 24px; /* smaller button size */
+  width: 24px;
   height: 24px;
   transition: transform 0.2s ease;
 }
@@ -110,11 +112,11 @@
 }
 
 .footer-socials img.social-icon {
-  width: 100%; /* make the img fit the a element */
+  width: 100%;
   height: 100%;
   display: block;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* turns PNGs white if they are dark */
+  filter: brightness(0) invert(1);
 }
 
 /* ---- Bottom ---- */
@@ -134,14 +136,56 @@
   }
 }
 
+/* ---- MOBILE VERSION ---- */
 @media (max-width: 600px) {
+  .footer {
+    padding: 40px 20px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 35px;
+    margin-left: 0;
     text-align: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+
+  .footer-col img {
+    height: 50px;
+  }
+
+  .footer-col-pages {
+    padding-left: 0;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  .footer-col p {
+    font-size: 0.95rem;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 8px;
   }
 
   .footer-socials {
     justify-content: center;
+    margin-top: 5px;
+  }
+
+  .footer-socials a {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding-top: 20px;
   }
 }
