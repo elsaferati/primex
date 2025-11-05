@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import Terms from "./components/Terms";
 import ScrollToTop from "./helpers/ScrollToTop";
 import Cerificates from "./components/Certificates";
+import ApplyPage from "./pages/ApplyForm";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/certificates" element={<Cerificates />} />
+           <Route path="/apply" element={<ApplyPage />} />
         </Routes>
       </main>
       <Footer />

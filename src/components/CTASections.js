@@ -1,10 +1,14 @@
 import React from "react";
 import "../styles/CTASections.css";
+import { useNavigate } from "react-router-dom";
+
 import applyImg from "../images/apply.png";
 import teamImg from "../images/team-join-thumb-2-1.png";
 import teamWork from "../images/team-work-dark.png";
 
 function CTASections() {
+  const navigate = useNavigate();
+
   return (
     <div className="cta-wrapper">
       {/* ---- First CTA Section ---- */}
@@ -16,8 +20,16 @@ function CTASections() {
               <h2 className="cta-title">Let's talk business</h2>
               <p className="cta-text">Become part of our family.</p>
               <p className="cta-text">Let's work together</p>
-              <button className="cta-btn">Apply Now</button>
+
+              {/* Navigate to /apply page */}
+              <button
+                className="cta-btn"
+                onClick={() => navigate("/apply")}
+              >
+                Apply Now
+              </button>
             </div>
+
             <div className="cta-image">
               <img src={applyImg} alt="Business teamwork" />
             </div>
@@ -45,8 +57,16 @@ function CTASections() {
             <div className="cta-left">
               <p className="cta-subtitle">Join with us</p>
               <h2 className="cta-title">Apply for work</h2>
-              <button className="cta-btn large">Apply Now</button>
+
+              {/* Navigate to /apply page */}
+              <button
+                className="cta-btn large"
+                onClick={() => navigate("/apply")}
+              >
+                Apply Now
+              </button>
             </div>
+
             <div className="cta-image">
               <img src={teamImg} alt="Apply illustration" />
             </div>
@@ -58,3 +78,4 @@ function CTASections() {
 }
 
 export default CTASections;
+
