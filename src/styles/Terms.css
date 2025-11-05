@@ -1,36 +1,23 @@
-/* src/Terms.css */
 .terms-container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 30px;
-  background: #f9f9f9;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow-y: auto;
-  max-height: 90vh;
-  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
-  color: #333;
 }
 
 .terms-title {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 25px;
-  color: #0055a5;
+  margin-bottom: 1rem;
 }
 
-section {
-  margin-bottom: 25px;
+.terms-text {
+  white-space: pre-wrap; /* preserves line breaks */
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #333;
 }
 
-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #003366;
-}
-
-section p {
-  margin-bottom: 10px;
-  text-align: justify;
-}
