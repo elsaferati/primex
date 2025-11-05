@@ -42,7 +42,7 @@ function Services() {
   ];
 
   return (
-    <div id="services" className="services-wrapper">
+    <section id="services" className="services-wrapper">
       {/* Header section */}
       <div className="services-header">
         <h1>What we do</h1>
@@ -78,7 +78,7 @@ function Services() {
           </div>
         </section>
       ))}
-    </div>
+    </section>
   );
 }
 
