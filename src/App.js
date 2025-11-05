@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import Terms from "./components/Terms";
 import ScrollToTop from "./helpers/ScrollToTop";
+import Cerificates from "./components/Certificates";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/certificates" element={<Cerificates />} />
         </Routes>
       </main>
       <Footer />
@@ -23,9 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-

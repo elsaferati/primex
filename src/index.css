@@ -101,3 +101,11 @@ footer h3,
 footer h4 {
   color: #fff;
 }
+
+#home,
+#about,
+#services,
+#partners,
+#contact {
+  scroll-margin-top: 80px; /* same as header height */
+}

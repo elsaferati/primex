@@ -29,21 +29,27 @@ function Footer() {
             <h4>Pages</h4>
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <a href="/#home">Home</a>
               </li>
               <li>
-                <a href="#about">About Us</a>
+                <a href="/#about">About Us</a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a href="/#services">Services</a>
               </li>
               <li>
-                <a href="#partners">Our Partners</a>
+                <a href="/#partners">Our Partners</a>
               </li>
               <li>
-                <a href="#contact">Contact Us</a>
+                <a href="/#contact">Contact Us</a>
               </li>
-              <li><Link to="/terms">Terms and Conditions</Link></li>
+              <li>
+                <Link to="/terms">Terms and Conditions</Link>
+              </li>
+
+              <li>
+                <Link to="/certificates">Certificates</Link>
+              </li>
             </ul>
           </div>
 
@@ -100,5 +106,3 @@ function Footer() {
 }
 
 export default Footer;
-
-

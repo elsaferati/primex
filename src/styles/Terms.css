@@ -1,6 +1,6 @@
 .terms-container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 100px auto;
   padding: 20px;
   background: #fff;
   border-radius: 12px;
@@ -20,4 +20,3 @@
   font-size: 1rem;
   color: #333;
 }
-
