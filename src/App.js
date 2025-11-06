@@ -7,6 +7,7 @@ import Terms from "./components/Terms";
 import ScrollToTop from "./helpers/ScrollToTop";
 import Cerificates from "./components/Certificates";
 import ApplyPage from "./pages/ApplyForm";
+import BusinessForm from "./pages/BusinessForm";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/certificates" element={<Cerificates />} />
-           <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/business-apply" element={<BusinessForm />} />
         </Routes>
       </main>
       <Footer />

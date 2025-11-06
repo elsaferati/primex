@@ -24,7 +24,7 @@ function CTASections() {
               {/* Navigate to /apply page */}
               <button
                 className="cta-btn"
-                onClick={() => navigate("/apply")}
+                onClick={() => navigate("/business-apply")}
               >
                 Apply Now
               </button>
@@ -78,4 +78,3 @@ function CTASections() {
 }
 
 export default CTASections;
-
