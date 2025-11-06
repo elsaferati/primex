@@ -38,15 +38,15 @@ function ApplyForm() {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <div className="contact-container">
-        <div className="contact-text">
+    <section className="af-section">
+      <div className="af-container">
+        <div className="af-text">
           <h4>CONTACT US</h4>
           <h2>Let’s discuss your next project.</h2>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-row">
+        <form className="af-form" onSubmit={handleSubmit}>
+          <div className="af-form-row">
             <input
               type="text"
               name="name"
@@ -65,7 +65,7 @@ function ApplyForm() {
             />
           </div>
 
-          <div className="form-row">
+          <div className="af-form-row">
             <input
               type="text"
               name="company"
@@ -90,7 +90,7 @@ function ApplyForm() {
             onChange={handleChange}
           ></textarea>
 
-          <div className="privacy-check">
+          <div className="af-privacy">
             <input
               type="checkbox"
               name="privacyAccepted"
@@ -102,7 +102,7 @@ function ApplyForm() {
             </label>
           </div>
 
-          <button type="submit" className="contact-btn">
+          <button type="submit" className="af-btn">
             CONTACT US
           </button>
         </form>
@@ -112,4 +112,5 @@ function ApplyForm() {
 }
 
 export default ApplyForm;
+
 
