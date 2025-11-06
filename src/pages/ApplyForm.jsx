@@ -5,103 +5,105 @@ function ApplyForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    position: "",
-    message: "",
+    company: "",
+    country: "",
+    description: "",
+    privacyAccepted: false,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.privacyAccepted) {
+      alert("Please accept the privacy policy before submitting.");
+      return;
+    }
     console.log("Form submitted:", formData);
-    alert("Application submitted successfully!");
+    alert("Message sent successfully!");
     setFormData({
       name: "",
       email: "",
-      phone: "",
-      position: "",
-      message: "",
+      company: "",
+      country: "",
+      description: "",
+      privacyAccepted: false,
     });
   };
 
   return (
-    <section id="apply" className="apply-section">
-      <div className="apply-container">
-        <h2 className="apply-title">Join Our Team</h2>
-        <p className="apply-subtitle">
-          Fill out the form below to apply for a position with us.
-        </p>
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <div className="contact-text">
+          <h4>CONTACT US</h4>
+          <h2>Let’s discuss your next project.</h2>
+        </div>
 
-        <form className="apply-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Full Name</label>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-row">
             <input
               type="text"
-              id="name"
               name="name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
               required
             />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
             <input
               type="email"
-              id="email"
               name="email"
+              placeholder="Email"
               value={formData.email}
               onChange={handleChange}
               required
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
+          <div className="form-row">
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
+              type="text"
+              name="company"
+              placeholder="Company Name"
+              value={formData.company}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="country"
+              placeholder="Country"
+              value={formData.country}
               onChange={handleChange}
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="position">Position</label>
-            <select
-              id="position"
-              name="position"
-              value={formData.position}
+          <textarea
+            name="description"
+            placeholder="Project Description..."
+            rows="5"
+            value={formData.description}
+            onChange={handleChange}
+          ></textarea>
+
+          <div className="privacy-check">
+            <input
+              type="checkbox"
+              name="privacyAccepted"
+              checked={formData.privacyAccepted}
               onChange={handleChange}
-              required
-            >
-              <option value="">Select a position</option>
-              <option value="developer">Developer</option>
-              <option value="designer">Designer</option>
-              <option value="marketing">Marketing</option>
-              <option value="sales">Sales</option>
-            </select>
+            />
+            <label>
+              I accept the <span>Privacy Policy</span>
+            </label>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="message">Why do you want to join us?</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              value={formData.message}
-              onChange={handleChange}
-            ></textarea>
-          </div>
-
-          <button type="submit" className="apply-btn">
-            Submit Application
+          <button type="submit" className="contact-btn">
+            CONTACT US
           </button>
         </form>
       </div>
@@ -110,3 +112,4 @@ function ApplyForm() {
 }
 
 export default ApplyForm;
+
