@@ -9,7 +9,7 @@
 
 .bf-section {
   background: var(--bf-blue-main);
-  padding: 5rem 2rem;
+  padding: 5rem 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +65,7 @@
   flex: 1;
   background: var(--bf-input-bg);
   border: 1px solid var(--bf-blue-dark);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   padding: 1rem;
   font-size: 1rem;
   color: var(--bf-blue-dark);

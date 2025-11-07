@@ -10,7 +10,7 @@
 /* ---- Section ---- */
 .af-section {
   background: var(--af-blue-main);
-  padding: 5rem 2rem;
+  padding: 5rem 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@
   flex: 1;
   background: var(--af-input-bg);
   border: 1px solid var(--af-blue-dark);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   padding: 1rem;
   font-size: 1rem;
   color: var(--af-blue-dark);
@@ -95,7 +95,6 @@
   cursor: pointer;
   align-self: center;
   transition: all 0.3s ease;
-  
 }
 
 .af-btn:hover {
