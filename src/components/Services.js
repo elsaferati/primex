@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/Services.css";
 
-import working from "../videos/working.mp4";
-import working2 from "../videos/working2.mp4";
-import working3 from "../videos/working3.mp4";
+import sales from "../videos/SALES & BOOKKEEPING.mp4"; 
+import graphic from "../videos/GRAPHIC DESIGN.mp4";
+import admin from "../videos/ASSISTANT.mp4";
+import dev from "../videos/DEVELOPMENT.mp4";
+import ecommerce from "../videos/E COMMERCE.mp4";
 
 function Services() {
   // Each section uses its own video
@@ -19,31 +21,31 @@ function Services() {
           cyber security.
         </>
       ),
-      video: working,
+      video: dev,
     },
     {
       title: "E-Commerce",
       description:
         "With extensive experience, our skilled developers create customized e-commerce websites designed to effectively promote your brand. We focus on delivering tailored solutions that enhance your brand’s online presence and drive business growth.",
-      video: working2,
+      video: ecommerce,
     },
     {
       title: "Sales and Bookkeeping",
       description:
         "PrimEx provides full sales services, including global wholesale and retail management, production planning, and logistics. We offer advanced B2B and B2C e-commerce solutions for seamless transactions and excellent customer care. In bookkeeping, PrimEx ensures efficient financial management, including transaction recording, reporting, and compliance, allowing your operations to run smoothly and focus on growth.",
-      video: working3,
+      video: sales,
     },
     {
       title: "Assistant Administrator",
       description:
         "Our administrative services are designed to optimize business workflows. From conducting in-depth research and generating insightful reports to managing key communications and scheduling, we take care of essential administrative tasks. Whether it’s preparing correspondence, organizing meetings, or coordinating calls, our expert team ensures that every detail is handled with professionalism and efficiency.",
-      video: working,
+      video: admin,
     },
     {
       title: "Graphic Designer",
       description:
         "Our team of experienced designers is dedicated to creating stunning, high-quality designs that not only meet your needs but exceed expectations. We prioritize creativity, attention to detail, and fast turnaround times to ensure your projects are completed efficiently without compromising on quality. Whether you need branding, web design, or marketing materials, we deliver exceptional results tailored to your vision.",
-      video: working2,
+      video: graphic,
     },
   ];
 

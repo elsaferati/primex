@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ApplyForm.css";
 
 function ApplyForm() {
@@ -6,10 +6,41 @@ function ApplyForm() {
     name: "",
     email: "",
     company: "",
+    linkedin: "",        // ✅ LinkedIn field added
     country: "",
     description: "",
     privacyAccepted: false,
   });
+
+  const [countries, setCountries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        const data = await response.json();
+        const countryList = data
+          .map((country) => country.name?.common || country.name)
+          .sort((a, b) => a.localeCompare(b));
+
+        setCountries(countryList);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching countries:", err);
+        setError("Failed to load countries");
+        setCountries([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,6 +62,7 @@ function ApplyForm() {
       name: "",
       email: "",
       company: "",
+      linkedin: "",
       country: "",
       description: "",
       privacyAccepted: false,
@@ -69,17 +101,40 @@ function ApplyForm() {
             <input
               type="text"
               name="company"
-              placeholder="Company Name"
+              placeholder="Phone Number"
               value={formData.company}
               onChange={handleChange}
             />
+
+            {/* LinkedIn URL Field */}
             <input
-              type="text"
-              name="country"
-              placeholder="Country"
-              value={formData.country}
+              type="url"
+              name="linkedin"
+              placeholder="LinkedIn Profile URL"
+              value={formData.linkedin}
               onChange={handleChange}
             />
+          </div>
+
+          <div className="af-form-row">
+            {/* Country Dropdown */}
+            <select
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Country</option>
+              {loading && <option disabled>Loading countries...</option>}
+              {error && <option disabled>{error}</option>}
+              {!loading && !error &&
+                countries.map((country, index) => (
+                  <option key={index} value={country}>
+                    {country}
+                  </option>
+                ))
+              }
+            </select>
           </div>
 
           <textarea
@@ -112,5 +167,3 @@ function ApplyForm() {
 }
 
 export default ApplyForm;
-
-
