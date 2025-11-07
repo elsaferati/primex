@@ -85,3 +85,38 @@ app.post("/send-apply-form", async (req, res) => {
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+
+app.post("/send-contact-form", async (req, res) => {
+  const { fullName, email, message } = req.body;
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: "elsavferati@gmail.com",
+        pass: "dwnl yymr bfqc zqig",
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Contact Form" <elsavferati@gmail.com>`,
+      to: "elsavferati@gmail.com",
+      subject: `New Message from ${fullName}`,
+      html: `
+        <h2>New Contact Message</h2>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Failed to send email." });
+  }
+});
+

@@ -8,10 +8,28 @@ function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
-    setFormData({ fullName: "", email: "", message: "" });
+
+    try {
+      const response = await fetch("http://localhost:5000/send-contact-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("✅ Thank you for your message! We will get back to you soon.");
+        setFormData({ fullName: "", email: "", message: "" });
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("❌ An error occurred. Please try again later.");
+    }
   };
 
   return (
@@ -54,6 +72,7 @@ function Contact() {
             <p>Country: Republic of Kosovo</p>
           </div>
 
+          {/* Updated Contact Form */}
           <div className="contact-form-wrapper">
             <h3 className="form-title">Contact Us</h3>
             <form onSubmit={handleSubmit} className="contact-form">
