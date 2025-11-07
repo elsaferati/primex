@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/BusinessForm.css";
+import emailjs from "emailjs-com";
 
 const BusinessForm = () => {
   const [formData, setFormData] = useState({
@@ -19,19 +20,33 @@ const BusinessForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you! Your business inquiry has been submitted.");
-    console.log("Business Inquiry Data:", formData);
-    setFormData({
-      companyName: "",
-      contactPerson: "",
-      email: "",
-      phone: "",
-      businessType: "",
-      website: "",
-      message: "",
-    });
-  };
 
+    emailjs
+      .send(
+        "service_d0cxaxb", // <-- replace with your actual Service ID
+        "template_844nv66", // <-- replace with your actual Template ID
+        formData, // contains all the variables (companyName, email, etc.)
+        "G4QAf0X0e-5CSJHoN" // <-- your Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Thank you! Your inquiry has been sent successfully.");
+          setFormData({
+            companyName: "",
+            contactPerson: "",
+            email: "",
+            phone: "",
+            businessType: "",
+            website: "",
+            message: "",
+          });
+        },
+        (error) => {
+          alert("❌ Something went wrong. Please try again later.");
+          console.error("EmailJS Error:", error);
+        }
+      );
+  };
   return (
     <section className="bf-section">
       <div className="bf-container">
