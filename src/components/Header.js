@@ -34,6 +34,21 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const scrollId = location.state.scrollTo;
+
+      // Delay a bit to ensure the homepage is fully rendered
+      setTimeout(() => {
+        const el = document.getElementById(scrollId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100); // 100ms is usually enough
+
+      // Clear state after scroll so it doesn’t repeat
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
       // Navigate to home first, then scroll smoothly
@@ -62,7 +77,9 @@ function Header() {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
         <div className="logo">
-          <Link to="/"><img src={logo} alt="PrimEx Logo" /></Link>
+          <Link to="/">
+            <img src={logo} alt="PrimEx Logo" />
+          </Link>
         </div>
 
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
@@ -71,7 +88,7 @@ function Header() {
             { id: "about", label: "About Us" },
             { id: "services", label: "Services" },
             { id: "partners", label: "Our Partners" },
-            { id: "contact", label: "Contact Us" }
+            { id: "contact", label: "Contact Us" },
           ].map((item) => (
             <button
               key={item.id}
@@ -92,5 +109,3 @@ function Header() {
 }
 
 export default Header;
-
-
