@@ -1,8 +1,8 @@
 :root {
-  --bf-blue-dark: #012b52;
+  --bf-blue-dark: #024584;
   --bf-blue-main: #dcebff;
   --bf-blue-light: #00b4d8;
-  --bf-white: #ffffff;
+  --bf-white: #012b52;
   --bf-input-bg: #f8faff;
   --bf-border-light: #b5d9ff;
 }
@@ -64,7 +64,7 @@
 .bf-form select {
   flex: 1;
   background: var(--bf-input-bg);
-  border: 1px solid var(--bf-border-light);
+  border: 1px solid var(--bf-blue-dark);
   border-radius: 6px;
   padding: 1rem;
   font-size: 1rem;
@@ -77,24 +77,22 @@
 .bf-form select:focus {
   outline: none;
   border-color: var(--bf-blue-light);
-  box-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 0 2px var(--bf-blue-dark);
 }
 
 .bf-btn {
   background: var(--bf-white);
-  color: var(--bf-blue-dark);
+  color: var(--bf-input-bg);
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: center;
   transition: all 0.3s ease;
 }
 
 .bf-btn:hover {
-  background: var(--bf-blue-light);
-  color: var(--bf-white);
   transform: translateY(-3px);
 }
 

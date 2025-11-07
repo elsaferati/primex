@@ -34,6 +34,20 @@
   line-height: 1.6;
 }
 
+.virtual-agents {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #ffffff;
+  text-shadow: 0 0 2.5px #00e0ff, 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.virtual-agents:hover {
+  text-shadow: 0 0 5px #00e0ff, 0 0 15px #00e0ff, 0 0 20px #00e0ff,
+    0 0 30px rgba(0, 224, 255, 0.9);
+  transform: scale(1.05);
+}
 /* Each Section */
 .service-section {
   position: relative;

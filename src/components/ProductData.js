@@ -12,7 +12,9 @@ function ProductData() {
         <div className="product-data-grid">
           {/* Left: Text */}
           <div className="features-list">
-            <h2 className="features-title">Smart Attribute Automation</h2>
+            <h2 className="features-title">
+              AI-Powered Product Data Automation
+            </h2>
             <h3 className="highlight-text">No more manual data entry.</h3>
 
             <p className="description-text">

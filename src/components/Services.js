@@ -10,8 +10,15 @@ function Services() {
   const sections = [
     {
       title: "Software Developer & IT Support",
-      description:
-        "Our team delivers tailored software solutions, integrating VIRTUAL AGENTS to collaborate with people on tasks like order processing, customer service, logistics, and data management - boosting efficiency, success, and cyber security.",
+      description: (
+        <>
+          Our team delivers tailored software solutions, integrating{" "}
+          <span className="virtual-agents">VIRTUAL AGENTS</span> to collaborate
+          with people on tasks like order processing, customer service,
+          logistics, and data management – boosting efficiency, success, and
+          cyber security.
+        </>
+      ),
       video: working,
     },
     {
