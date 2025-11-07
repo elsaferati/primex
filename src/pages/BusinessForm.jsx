@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/BusinessForm.css";
-import emailjs from "emailjs-com";
+
 
 const BusinessForm = () => {
   const [formData, setFormData] = useState({
@@ -18,35 +18,38 @@ const BusinessForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    emailjs
-      .send(
-        "service_d0cxaxb", // <-- replace with your actual Service ID
-        "template_844nv66", // <-- replace with your actual Template ID
-        formData, // contains all the variables (companyName, email, etc.)
-        "G4QAf0X0e-5CSJHoN" // <-- your Public Key
-      )
-      .then(
-        (result) => {
-          alert("✅ Thank you! Your inquiry has been sent successfully.");
-          setFormData({
-            companyName: "",
-            contactPerson: "",
-            email: "",
-            phone: "",
-            businessType: "",
-            website: "",
-            message: "",
-          });
-        },
-        (error) => {
-          alert("❌ Something went wrong. Please try again later.");
-          console.error("EmailJS Error:", error);
-        }
-      );
-  };
+  try {
+    const response = await fetch("http://localhost:5000/send-business-inquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("✅ Thank you! Your inquiry has been sent successfully.");
+      setFormData({
+        companyName: "",
+        contactPerson: "",
+        email: "",
+        phone: "",
+        businessType: "",
+        website: "",
+        message: "",
+      });
+    } else {
+      alert("❌ Failed to send inquiry. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("❌ An error occurred. Please try again later.");
+  }
+};
+
   return (
     <section className="bf-section">
       <div className="bf-container">

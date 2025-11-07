@@ -6,7 +6,7 @@ function ApplyForm() {
     name: "",
     email: "",
     company: "",
-    linkedin: "",        // ✅ LinkedIn field added
+    linkedin: "",
     country: "",
     description: "",
     privacyAccepted: false,
@@ -20,7 +20,9 @@ function ApplyForm() {
     const fetchCountries = async () => {
       try {
         setLoading(true);
-        const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
+        const response = await fetch(
+          "https://restcountries.com/v3.1/all?fields=name"
+        );
         if (!response.ok) throw new Error("Network response was not ok");
 
         const data = await response.json();
@@ -50,23 +52,41 @@ function ApplyForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.privacyAccepted) {
       alert("Please accept the privacy policy before submitting.");
       return;
     }
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      linkedin: "",
-      country: "",
-      description: "",
-      privacyAccepted: false,
-    });
+
+    try {
+      const response = await fetch("http://localhost:5000/send-apply-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("✅ Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          linkedin: "",
+          country: "",
+          description: "",
+          privacyAccepted: false,
+        });
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("❌ An error occurred. Please try again later.");
+    }
   };
 
   return (
@@ -105,8 +125,6 @@ function ApplyForm() {
               value={formData.company}
               onChange={handleChange}
             />
-
-            {/* LinkedIn URL Field */}
             <input
               type="url"
               name="linkedin"
@@ -117,7 +135,6 @@ function ApplyForm() {
           </div>
 
           <div className="af-form-row">
-            {/* Country Dropdown */}
             <select
               name="country"
               value={formData.country}
@@ -127,13 +144,13 @@ function ApplyForm() {
               <option value="">Select Country</option>
               {loading && <option disabled>Loading countries...</option>}
               {error && <option disabled>{error}</option>}
-              {!loading && !error &&
+              {!loading &&
+                !error &&
                 countries.map((country, index) => (
                   <option key={index} value={country}>
                     {country}
                   </option>
-                ))
-              }
+                ))}
             </select>
           </div>
 
