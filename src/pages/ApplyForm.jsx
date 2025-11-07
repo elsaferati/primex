@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ApplyForm.css";
 
 function ApplyForm() {
@@ -10,6 +10,30 @@ function ApplyForm() {
     description: "",
     privacyAccepted: false,
   });
+
+  const [countries, setCountries] = useState([]);
+
+useEffect(() => {
+  const fetchCountries = async () => {
+    try {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      if (!response.ok) throw new Error("Network response was not ok");
+      const data = await response.json();
+
+      const countryList = data
+        .map((country) => country.name.common)
+        .sort((a, b) => a.localeCompare(b));
+
+      setCountries(countryList);
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+      setCountries(["Error loading countries"]);
+    }
+  };
+
+  fetchCountries();
+}, []);
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -69,17 +93,29 @@ function ApplyForm() {
             <input
               type="text"
               name="company"
-              placeholder="Company Name"
+              placeholder="Phone Number"
               value={formData.company}
               onChange={handleChange}
             />
-            <input
-              type="text"
+
+            {/* Dynamic country dropdown */}
+            <select
               name="country"
-              placeholder="Country"
               value={formData.country}
               onChange={handleChange}
-            />
+              required
+            >
+              <option value="">Select Country</option>
+              {countries.length > 0 ? (
+                countries.map((country, index) => (
+                  <option key={index} value={country}>
+                    {country}
+                  </option>
+                ))
+              ) : (
+                <option>Loading...</option>
+              )}
+            </select>
           </div>
 
           <textarea
@@ -112,5 +148,3 @@ function ApplyForm() {
 }
 
 export default ApplyForm;
-
-

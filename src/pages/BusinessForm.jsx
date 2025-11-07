@@ -111,7 +111,7 @@ const BusinessForm = () => {
           ></textarea>
 
           <button type="submit" className="bf-btn">
-            Submit Inquiry
+            Submit 
           </button>
         </form>
       </div>

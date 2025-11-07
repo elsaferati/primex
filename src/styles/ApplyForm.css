@@ -1,15 +1,15 @@
 :root {
-  --af-blue-dark: #012b52;
-  --af-blue-main: #0077b6;
+  --af-blue-dark: #024584;
+  --af-blue-main: #dcebff;
   --af-blue-light: #00b4d8;
-  --af-white: #ffffff;
+  --af-white: #012b52;
   --af-input-bg: #f8faff;
   --af-border-light: #b5d9ff;
 }
 
-/* ---- Section Layout ---- */
+/* ---- Section ---- */
 .af-section {
-  background: linear-gradient(135deg, var(--af-blue-main), var(--af-blue-light));
+  background: var(--af-blue-main);
   padding: 5rem 2rem;
   display: flex;
   justify-content: center;
@@ -18,6 +18,7 @@
   margin-top: 5rem;
 }
 
+/* ---- Container ---- */
 .af-container {
   display: flex;
   flex-wrap: wrap;
@@ -63,10 +64,11 @@
 }
 
 .af-form input,
-.af-form textarea {
+.af-form textarea,
+.af-form select {
   flex: 1;
   background: var(--af-input-bg);
-  border: 1px solid var(--af-border-light);
+  border: 1px solid var(--af-blue-dark);
   border-radius: 6px;
   padding: 1rem;
   font-size: 1rem;
@@ -75,43 +77,28 @@
 }
 
 .af-form input:focus,
-.af-form textarea:focus {
+.af-form textarea:focus,
+.af-form select:focus {
   outline: none;
   border-color: var(--af-blue-light);
-  box-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
-}
-
-/* ---- Privacy ---- */
-.af-privacy {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--af-white);
-  font-size: 0.9rem;
-}
-
-.af-privacy span {
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
+  box-shadow: 0 0 2px var(--af-blue-dark);
 }
 
 /* ---- Button ---- */
 .af-btn {
   background: var(--af-white);
-  color: var(--af-blue-dark);
+  color: white;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: center;
   transition: all 0.3s ease;
+  
 }
 
 .af-btn:hover {
-  background: var(--af-blue-light);
-  color: var(--af-white);
   transform: translateY(-3px);
 }
 
@@ -130,7 +117,3 @@
     align-self: center;
   }
 }
-
-
-
-
