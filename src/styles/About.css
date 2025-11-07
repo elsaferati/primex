@@ -76,6 +76,23 @@
 .about-btn:hover {
   background-color: #1a4fd9;
 }
+.about-img,
+.about-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.about-img.animate-up,
+.about-text.animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-text.animate-up {
+  transition-delay: 0.2s;
+}
+
 
 /* 📱 Responsive Design */
 @media (max-width: 900px) {

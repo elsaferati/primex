@@ -1,20 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/About.css";
 import aboutImg from "../images/agent.jpg";
 
 function About() {
+  const imageRef = useRef();
+  const textRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-up"); // slide up when in view
+          } else {
+            entry.target.classList.remove("animate-up"); // remove when out of view
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const imageElement = imageRef.current;
+    const textElement = textRef.current;
+
+    if (imageElement) observer.observe(imageElement);
+    if (textElement) observer.observe(textElement);
+
+    return () => {
+      if (imageElement) observer.unobserve(imageElement);
+      if (textElement) observer.unobserve(textElement);
+    };
+  }, []);
+
   return (
     <section className="about" id="about">
       <div className="about-container">
-        {/* Image on the left */}
-        <div className="about-img">
+        <div className="about-img" ref={imageRef}>
           <img src={aboutImg} alt="About PrimEx" />
         </div>
 
-        {/* Text on the right */}
-        <div className="about-text">
+        <div className="about-text" ref={textRef}>
           <h5>ABOUT US</h5>
-          <h2>Hi, we are <span>PrimEx</span></h2>
+          <h2>
+            Hi, we are <span>PrimEx</span>
+          </h2>
           <p>
             PrimEx is a family-tradition company with over 40 years of experience 
             in the furniture industry, combining its long-standing expertise with 
@@ -35,9 +64,3 @@ function About() {
 }
 
 export default About;
-
-
-
-
-
-

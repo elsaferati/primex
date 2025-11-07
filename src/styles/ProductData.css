@@ -116,6 +116,26 @@
   max-width: 100%;
   border-radius: 1rem;
 }
+/* Initial state for animation */
+.features-list,
+.product-image-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* Animate up when visible */
+.features-list.animate-up,
+.product-image-container.animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: stagger the animation for image */
+.product-image-container.animate-up {
+  transition-delay: 0.2s;
+}
+
 
 /* ---- Tablet / Desktop ---- */
 @media (min-width: 768px) {
