@@ -5,22 +5,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const location = useLocation(); // get current route
+  const location = useLocation();
   const navigate = useNavigate();
 
-  // Track scroll and active section (only on home page)
   useEffect(() => {
     if (location.pathname !== "/") {
-      // Reset active section when not on homepage
       setActiveSection("");
       return;
     }
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
-
       const sections = document.querySelectorAll("section");
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -37,21 +35,16 @@ function Header() {
   useEffect(() => {
     if (location.pathname === "/" && location.state?.scrollTo) {
       const scrollId = location.state.scrollTo;
-
-      // Delay a bit to ensure the homepage is fully rendered
       setTimeout(() => {
         const el = document.getElementById(scrollId);
         if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100); // 100ms is usually enough
-
-      // Clear state after scroll so it doesn’t repeat
+      }, 100);
       window.history.replaceState({}, document.title);
     }
   }, [location]);
 
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
-      // Navigate to home first, then scroll smoothly
       navigate("/", { state: { scrollTo: id } });
       setIsMenuOpen(false);
       return;
@@ -61,18 +54,7 @@ function Header() {
     setIsMenuOpen(false);
   };
 
-  // Handle scroll on navigation from other pages
-  useEffect(() => {
-    if (location.pathname === "/" && location.state?.scrollTo) {
-      const el = document.getElementById(location.state.scrollTo);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        // Clear state after scrolling
-        window.history.replaceState({}, document.title);
-      }
-    }
-  }, [location]);
-
+  // Navigation with dropdown
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
@@ -83,21 +65,72 @@ function Header() {
         </div>
 
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
-          {[
-            { id: "home", label: "Home" },
-            { id: "about", label: "About Us" },
-            { id: "services", label: "Services" },
-            { id: "partners", label: "Our Partners" },
-            { id: "contact", label: "Contact Us" },
-          ].map((item) => (
+          <button
+            onClick={() => scrollToSection("home")}
+            className={activeSection === "home" ? "active" : ""}
+          >
+            Home
+          </button>
+
+          {/* About Us with dropdown */}
+          <div
+            className="dropdown"
+            onMouseEnter={() => setShowAboutDropdown(true)}
+            onMouseLeave={() => setShowAboutDropdown(false)}
+          >
             <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={activeSection === item.id ? "active" : ""}
+              className={`dropdown-btn ${
+                activeSection === "about" ? "active" : ""
+              }`}
+              onClick={() => scrollToSection("about")}
             >
-              {item.label}
+              About Us ▾
             </button>
-          ))}
+
+            {showAboutDropdown && (
+              <div className="dropdown-menu">
+                <Link
+                  to="/our-work"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setShowAboutDropdown(false);
+                  }}
+                >
+                  Our Work
+                </Link>
+                <Link
+                  to="/our-people"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setShowAboutDropdown(false);
+                  }}
+                >
+                  Our People
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => scrollToSection("services")}
+            className={activeSection === "services" ? "active" : ""}
+          >
+            Services
+          </button>
+
+          <button
+            onClick={() => scrollToSection("partners")}
+            className={activeSection === "partners" ? "active" : ""}
+          >
+            Our Partners
+          </button>
+
+          <button
+            onClick={() => scrollToSection("contact")}
+            className={activeSection === "contact" ? "active" : ""}
+          >
+            Contact Us
+          </button>
         </nav>
 
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>

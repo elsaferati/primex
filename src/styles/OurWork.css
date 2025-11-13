@@ -1,0 +1,31 @@
+.ourwork-wrapper {
+  padding: 4rem 2rem;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+}
+
+.ourwork-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ourwork-header h1 {
+  font-size: 2.5rem;
+  color: #0d1b2a;
+  margin-bottom: 1rem;
+}
+
+.ourwork-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ourwork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
