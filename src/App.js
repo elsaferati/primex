@@ -9,7 +9,8 @@ import Cerificates from "./components/Certificates";
 import ApplyPage from "./pages/ApplyForm";
 import BusinessForm from "./pages/BusinessForm";
 import OurWork from "./pages/OurWork";
-import OurPeople from "./pages/OurPeople";  
+import OurPeople from "./pages/OurPeople";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   return (
@@ -24,10 +25,8 @@ function App() {
           <Route path="/apply" element={<ApplyPage />} />
           <Route path="/business-apply" element={<BusinessForm />} />
           <Route path="/our-work" element={<OurWork />} />
-          <Route
-            path="/our-people"
-            element={<OurPeople />}
-          />
+          <Route path="/our-people" element={<OurPeople />} />
+          <Route path="/our-work/:id" element={<ProjectDetails />} />
         </Routes>
       </main>
       <Footer />
