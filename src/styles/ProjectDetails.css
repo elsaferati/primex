@@ -1,14 +1,21 @@
 .project-details {
   margin-top: 100px;
+  padding: 1rem 4rem;
   background-color: #fff;
   color: #111827;
 }
 
-/* HERO IMAGE */
 .hero {
+  position: relative;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
   overflow: hidden;
+  padding-left: 5%;
 }
 
 .hero img {
