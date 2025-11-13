@@ -1,80 +1,81 @@
 import React, { useState } from "react";
 import "../styles/OurPeople.css";
+import partner1 from "../images/partner1.jpg";
 
 const teamData = {
   "Executive Team": [
     {
       name: "Ismael Peinado",
       title: "Chief Technology Officer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Carlos Aguirre",
       title: "Chief Financial Officer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Megan Amdahl",
       title: "Chief Customer Officer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
   ],
   "Executive Business Leaders": [
     {
       name: "John Smith",
       title: "VP of Operations",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Jane Doe",
       title: "VP of Marketing",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Robert Lee",
       title: "VP of Strategy",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
   ],
   "Product Owners": [
     {
       name: "Emily Carter",
       title: "Product Owner",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Michael Ross",
       title: "Product Owner",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
   ],
   "Design Team": [
     {
       name: "Sarah Johnson",
       title: "UI/UX Designer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Liam Brown",
       title: "Graphic Designer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
   ],
   Developers: [
     {
       name: "Anna Green",
       title: "Frontend Developer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "David Kim",
       title: "Backend Developer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
     {
       name: "Sofia Lopez",
       title: "Full Stack Developer",
-      image: "https://via.placeholder.com/250x250",
+      image: partner1,
     },
   ],
 };
