@@ -9,6 +9,7 @@ import Cerificates from "./components/Certificates";
 import ApplyPage from "./pages/ApplyForm";
 import BusinessForm from "./pages/BusinessForm";
 import OurWork from "./pages/OurWork";
+import OurPeople from "./pages/OurPeople";  
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/our-work" element={<OurWork />} />
           <Route
             path="/our-people"
-            element={<div>Our People Page Coming Soon</div>}
+            element={<OurPeople />}
           />
         </Routes>
       </main>
