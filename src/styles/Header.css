@@ -178,7 +178,7 @@ body {
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: 40px;
+  top: 100%; /* Fix gap under button */
   left: 0;
   min-width: 160px;
   background-color: #ffffff;
@@ -189,6 +189,16 @@ body {
   z-index: 200;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropdown-menu a {

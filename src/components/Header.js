@@ -76,7 +76,10 @@ function Header() {
           <div
             className="dropdown"
             onMouseEnter={() => setShowAboutDropdown(true)}
-            onMouseLeave={() => setShowAboutDropdown(false)}
+            onMouseLeave={() => {
+              // delay hiding slightly to allow moving the mouse down smoothly
+              setTimeout(() => setShowAboutDropdown(false), 200);
+            }}
           >
             <button
               className={`dropdown-btn ${
